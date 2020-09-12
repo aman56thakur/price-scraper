@@ -1,0 +1,23 @@
+{
+  "name": "price-scraper",
+  "version": "1.0.0",
+  "description": "Web Screaper to track product price",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "env-cmd -f ./config/dev.env nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.2.5",
+    "cheerio": "^1.0.0-rc.3",
+    "cron": "^1.8.2",
+    "puppeteer": "^5.3.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.4"
+  }
+}
