@@ -1,2 +1,2 @@
 # price-scraper
- Web Screaper to track product price
+ Web Scraper to track product price
