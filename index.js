@@ -23,11 +23,11 @@ async function checkPrice(page) {
   $('#priceblock_ourprice', html).each(function () {
     const rupeePrice = $(this).text()
     const price = Number(rupeePrice.replace(/[^0-9.-]+/g, ''))
-    if (price <= 150000) sendWelcomeEmail(rupeePrice)
+    if (price <= 150000) sendEmail(rupeePrice)
   })
 }
 
-function sendWelcomeEmail(price) {
+function sendEmail(price) {
   sgMail.send({
     to: 'aman56thakur@gmail.com',
     from: 'amant9656@gmail.com',
@@ -40,7 +40,7 @@ function sendWelcomeEmail(price) {
 async function monitor() {
   const page = await configureBrowser()
   let job = new CronJob(
-    '* * */6 * * *',
+    '* * */10 * * *',
     function () {
       checkPrice(page)
     },
