@@ -21,7 +21,7 @@ async function checkPrice(page) {
   $('#priceblock_ourprice', html).each(function () {
     const rupeePrice = $(this).text()
     const price = Number(rupeePrice.replace(/[^0-9.-]+/g, ''))
-    if (price <= 20000) sendWelcomeEmail(rupeePrice)
+    if (price <= 15000) sendWelcomeEmail(rupeePrice)
   })
 }
 
