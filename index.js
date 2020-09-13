@@ -31,14 +31,14 @@ function sendWelcomeEmail(price) {
     from: 'amant9656@gmail.com',
     subject: `Price Dropped to ${price}`,
     html:
-      '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Price Dropped!!</title></head><body><h1>Price Dropped!!</h1><h2>Buy the Acer Monitor now.</h2><a href="https://www.amazon.in/Acer-ED322QR-31-5-inch-Monitor-Speakers/dp/B07XYD79KR" style="font-size:large">Product Link</a></body></html>',
+      '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Price Dropped!!</title></head><body style="font-family:Century Gothic"><div><h1>Price Dropped!!</h1><h2>Buy the Acer Monitor now.</h2><br><a href="https://www.amazon.in/Acer-ED322QR-31-5-inch-Monitor-Speakers/dp/B07XYD79KR" style="text-decoration:none;background-color:#2f4f4f;color:#fff;padding:8px 12px 8px 12px;border-radius:5px;font-size:large">Product Link</a></div></body></html>',
   })
 }
 
 async function monitor() {
   const page = await configureBrowser()
   let job = new CronJob(
-    '* * */24 * * *',
+    '* * */6 * * *',
     function () {
       checkPrice(page)
     },
