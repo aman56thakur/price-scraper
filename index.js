@@ -9,7 +9,9 @@ const url =
   'https://www.amazon.in/Acer-ED322QR-31-5-inch-Monitor-Speakers/dp/B07XYD79KR'
 
 async function configureBrowser() {
-  const browser = await puppeteer.launch()
+  const browser = await puppeteer.launch({
+    args: ['--no-sandbox'],
+  })
   const page = await browser.newPage()
   await page.goto(url)
   return page
@@ -21,7 +23,7 @@ async function checkPrice(page) {
   $('#priceblock_ourprice', html).each(function () {
     const rupeePrice = $(this).text()
     const price = Number(rupeePrice.replace(/[^0-9.-]+/g, ''))
-    if (price <= 15000) sendWelcomeEmail(rupeePrice)
+    if (price <= 150000) sendWelcomeEmail(rupeePrice)
   })
 }
 
